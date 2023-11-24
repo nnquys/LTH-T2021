@@ -1,0 +1,112 @@
+ // Bài 5: nhập điểm trung bình và xếp loại
+namespace BaiTap
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.Write("Nhập điểm trung bình để kiểm tra: ");
+            float DiemTB = float.Parse(Console.ReadLine());
+
+            if (DiemTB >= 9.0)
+                Console.WriteLine("Xếp loại xuất sắc");
+                        else if (DiemTB >= 8.0)
+            {
+                Console.WriteLine("Xếp loại giỏi");
+            }
+            else if (DiemTB >= 6.5)
+            {
+                Console.WriteLine("Xếp loại khá");
+            }
+            else if (DiemTB >= 5.0)
+            {
+                Console.WriteLine("Xếp loại trung bình");
+            }
+            else if (DiemTB >=3.5)
+            {
+                Console.WriteLine("Xếp loại yếu");
+            }
+            else
+            {
+                Console.WriteLine("Xếp loại kém");
+            }
+            Console.ReadKey();
+        }
+        
+    }
+}
+
+ //Bài 6: tính số tờ tiền quy đổi ít nhất 
+namespace BaiTap
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.Write("Nhập vào số tiền (là bội số của 50000): ");
+        int t = Convert.ToInt32(Console.ReadLine());
+
+        int menhGia500000 = t / 500000;
+        int menhGia200000 = (t % 500000) / 200000;
+        int menhGia100000 = ((t % 500000) % 200000) / 100000;
+        int menhGia50000 = (((t % 500000) % 200000) % 100000) / 50000;
+
+        Console.WriteLine("Số tờ tiền ít nhất là:");
+        Console.WriteLine("Tờ 500000: " + menhGia500000);
+        Console.WriteLine("Tờ 200000: " + menhGia200000);
+        Console.WriteLine("Tờ 100000: " + menhGia100000);
+        Console.WriteLine("Tờ 50000: " + menhGia50000);
+
+        Console.ReadLine();
+    
+        }
+    }
+}
+
+// Bài 7: Tính tiền điện 
+namespace BaiTap
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            Console.Write("Nhập chỉ số điện:");
+            int chiSoDien = Convert.ToInt32(Console.ReadLine());
+
+            double giaDien;
+            if (chiSoDien <= 50)
+            {
+                giaDien = chiSoDien * 1484;
+            }
+            else if (chiSoDien <= 100)
+            {
+                giaDien = 50 * 1484 + (chiSoDien - 50) * 1533;
+            }
+            else if (chiSoDien <= 200)
+            {
+                giaDien = 50 * 1484 + 50 * 1533 + (chiSoDien - 100) * 1786;
+            }
+            else if (chiSoDien <= 300)
+            {
+                giaDien = 50 * 1484 + 50 * 1533 + 100 * 1786 + (chiSoDien - 200) * 2242;
+            }
+            else if (chiSoDien <= 400)
+            {
+                giaDien = 50 * 1484 + 50 * 1533 + 100 * 1786 + 100 * 2242 + (chiSoDien - 300) * 2503;
+            }
+            else
+            {
+                giaDien = 50 * 1484 + 50 * 1533 + 100 * 1786 + 100 * 2242 + 100 * 2503 + (chiSoDien - 400) * 2587;
+            }
+
+            double tienDien = giaDien * 1.1; // Áp dụng VAT 10%
+
+            Console.WriteLine("Tổng tiền điện là: " + tienDien.ToString("0.") + " VND");
+            Console.ReadKey();
+        }
+    }
+}
+*/
