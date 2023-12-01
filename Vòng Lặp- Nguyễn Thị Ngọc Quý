@@ -1,0 +1,143 @@
+// VÒNG LẶP 
+//Bài 1:Tính tổng của dãy số từ 1 đến 100
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        int n;
+        Console.Write("Nhập vào số nguyên dương n: ");
+        n = Convert.ToInt32(Console.ReadLine());
+        if (n > 0 && n<=100)
+        {
+
+            int sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                sum += i;
+            }
+            Console.WriteLine("Tổng của dãy số từ 1 đến {0} là {1}.", n, sum);
+        }
+        else
+            Console.Write("Vui lòng nhập số nguyên dương từ 1 đến 100");
+       
+        Console.ReadLine();
+    }
+}
+
+/*
+// Bài 2: Tính n nhỏ nhất để tổng 1 + 2..+n >10000
+
+using System;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        int sum = 0;
+        int n = 1;
+
+        while (sum < 10000)
+        {
+            n++;
+            sum += n;
+        }
+        //  Console.WriteLine("Giá trị n nhỏ nhất để tổng 1 + 2 + ... + n < 10000 là: " + n);
+        Console.WriteLine("Giá trị n nhỏ nhất để tổng 1 + 2 + ... + n < 10000 là {0}", n);
+        Console.ReadLine();    }
+}
+
+/*
+// Bài 3: In ra màn hình dãy số lẻ bé hơn n 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;       
+        Console.Write("Nhập số nguyên dương n: ");
+        int n = int.Parse(Console.ReadLine());
+        if (n > 0)
+        {
+            Console.WriteLine("Các số lẻ nhỏ hơn n là:");           
+            for (int i = 1; i < n; i += 2)
+            {
+                Console.WriteLine(i);
+            }
+        }
+        else
+            Console.WriteLine("Vui lòng nhập số nguyên dương");
+        Console.ReadLine();
+    }
+}
+/*
+    // Bài 3 
+using System;
+
+class Program
+{
+    static void Main()
+    {
+         Console.OutputEncoding = System.Text.Encoding.Unicode;
+         for (int x = 0; x <= 36; x++) // Số con gà từ 0 đến 36
+          {
+              int y = 36 - x; // Số con chó là số con còn lại
+              if (2 * x + 4 * y == 100) // Kiểm tra số chân
+              {
+                  Console.WriteLine("Số con gà: " + x);
+                  Console.WriteLine("Số con chó: " + y);
+              }           
+          }
+        Console.ReadLine();
+    }
+}
+*/
+/*
+    // Bài 5: tìm UCLN của 2 số n và m 
+
+using System;
+
+class EuclideanAlgorithm
+{
+
+    static void Main()
+    {
+        Console.OutputEncoding = System.Text.Encoding.Unicode;
+        Console.Write("Nhập số n: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Nhập số m: ");
+        int m = Convert.ToInt32(Console.ReadLine());
+
+        if (n == m)
+        {
+            Console.WriteLine("Ước chung lớn nhất của {0} và {1} là: {2}", n, m, n);
+        }
+        else if (n > m)
+        {
+            int gcd = Euclide(n, m);
+            Console.WriteLine("Ước chung lớn nhất của {0} và {1} là: {2}", n, m, gcd);
+        }
+        else
+        {
+            int gcd = Euclide(m, n);
+            Console.WriteLine("Ước chung lớn nhất của {0} và {1} là: {2}", n, m, gcd);
+        }
+    }
+
+    static int Euclide(int n, int m)
+    {
+        while (m != 0)  // Chạy vòng lặp cho đến khi bằng 0
+        {
+            int tam = n % m;
+            n = m;
+            m = tam;
+        }
+
+        return n;
+    }
+}
